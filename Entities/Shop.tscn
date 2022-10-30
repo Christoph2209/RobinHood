@@ -1,0 +1,239 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scripts/Shop.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/fire_bolts_pickup.png" type="Texture" id=2]
+[ext_resource path="res://Entities/ARIAL.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Sprites/health_pickup.png" type="Texture" id=4]
+[ext_resource path="res://Entities/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SFX/coins.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Sprites/pixil-frame-0 (3).png" type="Texture" id=7]
+[ext_resource path="res://SFX/hub.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Sprites/shopkeeper_happy.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/shop.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/shopkeeper_neutral_talk.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "smile",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "talk",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 298.5 )
+scale = Vector2( 4, 2.4875 )
+texture = ExtResource( 10 )
+
+[node name="Sprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 512, 298.5 )
+scale = Vector2( 4, 2.4875 )
+frames = SubResource( 5 )
+animation = "smile"
+playing = true
+flip_h = true
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 160.0
+margin_top = 8.0
+margin_right = 264.0
+margin_bottom = 48.0
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 760.0
+margin_top = 538.0
+margin_right = 952.0
+margin_bottom = 578.0
+text = "50G x Gold Chicken"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 72.0
+margin_top = 528.0
+margin_right = 264.0
+margin_bottom = 568.0
+text = "20G x 5 Fire Arrows"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 416.0
+margin_top = 536.0
+margin_right = 616.0
+margin_bottom = 576.0
+text = "10G x Chicken"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 24.0
+margin_top = 120.0
+margin_right = 384.0
+margin_bottom = 272.0
+custom_fonts/font = SubResource( 3 )
+text = "G.Chicken
+give 1 temp hitpoint
+(Only Purchasable
+when at 3 HP)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 120.0
+margin_right = 386.0
+margin_bottom = 205.0
+custom_fonts/font = SubResource( 3 )
+text = "Chicken will give you 1 hp
+ up to 3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+margin_left = 24.0
+margin_top = 120.0
+margin_right = 384.0
+margin_bottom = 312.0
+custom_fonts/font = SubResource( 3 )
+text = "Fire Arrows 
+Destroy Vines
+And do more
+damage"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="header" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 80.0
+margin_right = 384.0
+margin_bottom = 192.0
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "WELCOME TO THE SHOP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fire_bolts_pickup4" type="Sprite" parent="."]
+position = Vector2( 520, 464 )
+scale = Vector2( 5.25, 5.5 )
+texture = ExtResource( 4 )
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+anchor_left = -0.1
+anchor_right = -0.1
+margin_left = 518.4
+margin_top = 376.0
+margin_right = 718.4
+margin_bottom = 592.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fire_bolts_pickup2" type="Sprite" parent="."]
+position = Vector2( 856, 466 )
+scale = Vector2( 5.8125, 5.75 )
+texture = ExtResource( 7 )
+
+[node name="Panel 3" type="Panel" parent="."]
+visible = false
+anchor_left = -0.1
+anchor_right = -0.1
+margin_left = 870.4
+margin_top = 296.0
+margin_right = 1062.4
+margin_bottom = 592.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fire_bolts_pickup3" type="Sprite" parent="."]
+position = Vector2( 168, 464 )
+scale = Vector2( 5.25, 5.5 )
+texture = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_left = -0.1
+anchor_right = -0.1
+margin_left = 174.4
+margin_top = 368.0
+margin_right = 366.4
+margin_bottom = 592.0
+theme = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 512, 64 )
+stream = ExtResource( 8 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
+
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="mouse_entered" from="Button3" to="." method="_on_Button3_mouse_entered"]
+[connection signal="mouse_exited" from="Button3" to="." method="_on_Button3_mouse_exited"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="Button2" to="." method="_on_Button2_mouse_entered"]
+[connection signal="mouse_exited" from="Button2" to="." method="_on_Button2_mouse_exited"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
